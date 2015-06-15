@@ -1,0 +1,196 @@
+/* --- Variables --- */
+/* --- Mixins --- */
+/* line 32, ../sass/styles.scss */
+body, html, .container {
+  margin: 0px;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* line 39, ../sass/styles.scss */
+.slide {
+  text-align: center;
+  min-height: 400px;
+  padding: 100px 60px 100px 80px;
+}
+/* line 44, ../sass/styles.scss */
+.slide .header {
+  text-align: center;
+  font-family: "Raleway", Helvetica, Arial, Sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 6px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #cccccc;
+}
+/* line 55, ../sass/styles.scss */
+.slide .header.dark-bg {
+  color: #EEE;
+}
+
+/* line 65, ../sass/styles.scss */
+.slide.image-slide .background-filter {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.3;
+}
+
+/* line 77, ../sass/styles.scss */
+.slide.title-slide {
+  background-size: cover !important;
+  background: url("../images/hero_blur.jpg") no-repeat center center fixed;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 87, ../sass/styles.scss */
+.slide.title-slide .slide-content {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 90, ../sass/styles.scss */
+.slide.title-slide .slide-content .slide-header {
+  position: relative;
+  font-size: 90px;
+  color: white;
+  text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-family: "Montserrat", Helvetica, Arial, Sans-serif;
+}
+/* line 99, ../sass/styles.scss */
+.slide.title-slide .slide-content .divider, .slide.title-slide .slide-content .subtext {
+  position: relative;
+  top: -25px;
+}
+/* line 107, ../sass/styles.scss */
+.slide.title-slide .slide-content .divider hr {
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+/* line 111, ../sass/styles.scss */
+.slide.title-slide .slide-content .divider .hr-top {
+  width: 750px;
+  max-width: 85%;
+}
+/* line 115, ../sass/styles.scss */
+.slide.title-slide .slide-content .divider .hr-bottom {
+  width: 800px;
+  max-width: 90%;
+}
+/* line 121, ../sass/styles.scss */
+.slide.title-slide .slide-content .subtext {
+  color: #EEE;
+  font-family: "Open Sans", Helvetica, Arial, Sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+/* line 138, ../sass/styles.scss */
+.slide.about-slide {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 65px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 65px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 65px;
+  background: url("../images/agsquare.png");
+}
+/* line 147, ../sass/styles.scss */
+.slide.about-slide .row.skills .icon-description {
+  height: 40px;
+  line-height: 40px;
+  font-family: "Raleway", Helvetica, Arial, Sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: black;
+}
+/* line 156, ../sass/styles.scss */
+.slide.about-slide .row.skills img {
+  margin-bottom: 26px;
+  opacity: 0.8;
+  height: 120px;
+  width: auto;
+}
+/* line 162, ../sass/styles.scss */
+.slide.about-slide .row.skills img:hover {
+  opacity: 1;
+}
+/* line 169, ../sass/styles.scss */
+.slide.about-slide .row.divider-row .divider {
+  margin: 50px auto 70px;
+  width: 100%;
+  background: #cccccc;
+  height: 1px;
+}
+/* line 180, ../sass/styles.scss */
+.slide.about-slide .row.testimonials blockquote {
+  text-align: left;
+  border-color: #CCC;
+  border-width: 3px;
+  font-family: "Open Sans", Helvetica, Arial, Sans-serif;
+  font-weight: 100;
+  margin: 14px;
+  padding-right: 30px;
+}
+/* line 189, ../sass/styles.scss */
+.slide.about-slide .row.testimonials blockquote footer {
+  margin-top: 8px;
+}
+
+/* line 198, ../sass/styles.scss */
+.slide.themes-slide {
+  background-size: cover !important;
+  background: url("../images/bokeh.jpg") no-repeat center center fixed;
+}
+/* line 202, ../sass/styles.scss */
+.slide.themes-slide .subheader {
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-family: "Montserrat", Helvetica, Arial, Sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #CCC;
+  opacity: 0.7;
+}
+/* line 213, ../sass/styles.scss */
+.slide.themes-slide .theme-frame {
+  padding: 15px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.4);
+}
+/* line 218, ../sass/styles.scss */
+.slide.themes-slide .theme-frame .theme-container {
+  text-align: center;
+  overflow: hidden;
+}
+/* line 222, ../sass/styles.scss */
+.slide.themes-slide .theme-frame .theme-container img {
+  margin: 0 -50%;
+  display: inline-block;
+  height: 400px;
+  opacity: 0.7;
+  width: auto;
+  transition: opacity 0.5s;
+}
+/* line 231, ../sass/styles.scss */
+.slide.themes-slide .theme-frame .theme-container img:hover {
+  opacity: 0.9;
+}
+
+/* line 238, ../sass/styles.scss */
+.slide.projects-slide {
+  background: url("../images/agsquare.png");
+}
+
+/* line 242, ../sass/styles.scss */
+.slide.footer-slide {
+  background: #333;
+}
