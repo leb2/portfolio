@@ -25,21 +25,25 @@ $divider-color: #CCC;
 }
 
 
-
-
-
-
 body, html, .container {
 	margin: 0px;
 	height: 100% !important;
 	width: 100% !important;
 }
 
+.max-width-container {
+	width: 90%;
+	max-width: 950px;
+	display: inline-block;
+	text-align: center;
+}
+
 
 .slide {
 	text-align: center;
 	min-height: 400px;
-	padding: 100px 60px 100px 80px;
+	padding: 40px 0px;
+
 
 	.header {
 		text-align: center;
@@ -48,7 +52,7 @@ body, html, .container {
 		text-transform: uppercase;
 		font-weight: 300;
 		padding: 6px;
-		margin-bottom: 30px;
+		margin: 30px 0;
 		border-bottom: 1px solid $divider-color;
 	}
 
@@ -56,11 +60,12 @@ body, html, .container {
 		color: #EEE;
 	}
 
+
 }
 
 
-
-.slide.image-slide {
+.image-slide {
+	@extend .slide;
 
 	.background-filter {
 		position: absolute;
@@ -74,7 +79,10 @@ body, html, .container {
 }
 
 
-.slide.title-slide {
+
+$hero-break-small: 770px;
+.title-slide {
+	@extend .slide;
 
 	// flickr: desobte
 	background-size: cover !important;
@@ -82,6 +90,7 @@ body, html, .container {
 	height: 100%;
 	overflow: hidden;
 
+	padding: 0px;
 
 
 	.slide-content {
@@ -94,6 +103,13 @@ body, html, .container {
 			text-shadow: $on-white;
 			text-transform: uppercase;
 			font-family: $montserrat-stack;
+
+			@media (max-width: $hero-break-small) {
+				font-size: 60px;
+			}
+			@media (max-width: 550px) {
+				font-size: 45px;
+			}
 		}
 
 		.divider, .subtext {
@@ -101,12 +117,27 @@ body, html, .container {
 			// Correct header text being too tall
 			position: relative;
 			top: -25px;
+
+			@media (max-width: $hero-break-small) {
+				top: -15px;
+			}
+			@media (max-width: 550px) {
+				top: -10px;
+			}
+			@media (max-width: 450px) {
+				top: -8px;
+			}
 		}
 
 		.divider {
 			hr {
 				margin-top: 8px;
 				margin-bottom: 2px;
+
+				@media (max-width: $hero-break-small) {
+					margin-top: 3px;
+					margin-bottom: 2px;
+				}
 			}
 			.hr-top {
 				width: 750px;
@@ -128,6 +159,13 @@ body, html, .container {
 			text-shadow: $on-white;
 
 			letter-spacing: 2px;
+
+			@media (max-width: $hero-break-small) {
+				font-size: 20px;
+			}
+			@media (max-width: 450px) {
+				font-size: 12px;
+			}
 		}
 	}
 }
@@ -135,14 +173,18 @@ body, html, .container {
 
 
 
-.slide.about-slide {
+.about-slide {
+	@extend .slide;
+
 	// Shadow for the bottom of the title slide
 	@include box-shadow(rgba(black, 0.8) 0px 0px 65px);
 	background: url('../images/agsquare.png');
 
-	
+	.skills {
 
-	.row.skills {
+		.skills-col {
+			padding: 0px 35px;
+		}
 
 		.icon-description {
 			height: 40px;
@@ -154,7 +196,8 @@ body, html, .container {
 		}
 
 		img {
-			margin-bottom: 26px;
+			padding-bottom: 26px;
+
 			opacity: 0.8;
 			height: 120px;
 			width: auto;
@@ -164,7 +207,7 @@ body, html, .container {
 		}
 	}
 
-	.row.divider-row {
+	.divider-row {
 
 		.divider {
 			margin: 50px auto 70px;
@@ -175,7 +218,7 @@ body, html, .container {
 		}
 	}
 
-	.row.testimonials {
+	.testimonials {
 
 		blockquote {
 			text-align: left;
@@ -195,9 +238,11 @@ body, html, .container {
 
 
 
-.slide.themes-slide {
+.themes-slide {
+	@extend .slide;
+
 	background-size: cover !important;
-	background: url('../images/bokeh.jpg') no-repeat center center fixed;
+	background: url('../images/blueGradient.jpg') no-repeat center center fixed;
 
 	.subheader {
 		letter-spacing: 2px;
@@ -206,14 +251,17 @@ body, html, .container {
 		font-family: $montserrat-stack;
 		text-transform: uppercase;
 		font-size: 30px;
-		color: #CCC;
+		color: #FFF;
 		opacity: 0.7;
 	}
 
 	.theme-frame {
 		padding: 15px;
-		margin: 20px;
+		// margin: 20px;
 		background: rgba(white, 0.4);
+		width: 100%;
+		max-width: 350px;
+		display: inline-block;
 
 		.theme-container {
 			text-align: center;
@@ -235,10 +283,12 @@ body, html, .container {
 	}
 }
 
-.slide.projects-slide {
+.projects-slide {
+	@extend .slide;
 	background: url('../images/agsquare.png');
 }
 
-.slide.footer-slide {
+.footer-slide {
+	@extend .slide;
 	background: #333;
 }
