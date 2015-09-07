@@ -13,6 +13,8 @@ $raleway-stack: 'Raleway', $helvetica-stack;
 $opensans-stack: 'Open Sans', $helvetica-stack;
 $on-white: 0px 0px 16px rgba(black, 0.3);
 $divider-color: #CCC;
+$main-blue: #26507c;
+$main-red: #7c2626;
 
 
 /* --- Mixins --- */
@@ -23,6 +25,11 @@ $divider-color: #CCC;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+@mixin small-caps {
+	font-family: $raleway-stack;
+	text-transform: uppercase;
+	font-weight: 300;
+}
 
 .flex-center {
 	display: flex;
@@ -30,11 +37,60 @@ $divider-color: #CCC;
 	justify-content: center;
 }
 
+.buffer-top {
+	margin-top: 30px;
+}
+
 
 body, html, .container {
 	margin: 0px;
 	height: 100% !important;
 	width: 100% !important;
+}
+
+button {
+	@include small-caps;
+	width: 100%;
+	padding: 10px 16px;
+	font-size: 12px;
+	text-align: center;
+	transition: background 0.25s, color 0.15s;
+	max-width: 200px;
+	margin: 15px 5px;
+	border: none;
+	color: #DDD;
+	background-color: transparentize($main-blue, 0.2);
+
+
+	&:not(.disabled):hover {
+		color: white;
+		background-color: $main-blue;
+	}
+
+	&.disabled {
+		background-color: transparentize($main-blue, 0.8);
+	}
+
+	&.red {
+		background-color: transparentize($main-red, 0.2);
+
+		&:not(.disabled):hover {
+			background-color: $main-red;
+		}
+		&.disabled {
+			background-color: transparentize($main-red, 0.8);
+		}
+	}
+}
+
+a.button {
+	@extend button;
+	display: block;
+	margin: 6px auto 0;
+
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 .max-width-container {
@@ -59,27 +115,47 @@ body, html, .container {
 	z-index: 0;
 
 	.dark-bg {
-		color: #EEE;
+		color: #FAFAFA;
 	}
 
 	h1 {
+		@include small-caps;
 		text-align: center;
-		font-family: $raleway-stack;
 		font-size: 34px;
-		text-transform: uppercase;
-		font-weight: 300;
 		padding: 6px;
 		margin: 30px 0;
 		border-bottom: 1px solid $divider-color;
+
+		&.heavy {
+			font-size: 40px;
+			font-weight: bold;
+		}
 	}
 
 	h2 {
-		margin-bottom: 10px;
-		margin-top: 20px;
-		font-family: $montserrat-stack;
-		text-transform: uppercase;
+		@include small-caps;
 		font-size: 30px;
 		color: #444;
+		border-bottom: 1px solid $divider-color;
+		padding-bottom: 3px;
+
+		.info {
+			margin-top: 4px;
+			color: #DDD;
+			font-size: 10px;
+			text-transform: capitalize;
+			text-transform: uppercase;
+			font-family: $helvetica-stack;
+
+			&::before {
+				content: '— ';
+				margin-right: 3px;
+			}
+			&::after {
+				content: ' —';
+				margin-left: 3px;
+			}
+		}
 	}
 
 
@@ -259,7 +335,6 @@ $hero-break-small: 770px;
 }
 
 
-
 .themes-slide {
 	@extend .slide;
 	@extend .image-slide;
@@ -267,14 +342,31 @@ $hero-break-small: 770px;
 	background-size: cover !important;
 	background: url('../images/blueGradient.jpg') no-repeat center center fixed;
 
+	h1 {
+		// To put on top of filter layer
+		position: relative;
+	}
+
+	h2 {
+		letter-spacing: 2px;
+		margin-top: 20px;
+		margin-bottom: 5px;
+		border: none;
+
+		.info {
+			letter-spacing: 1px;
+		}
+	}
+
 
 	.theme-frame {
-		padding: 15px;
+		// padding: 15px;
 		// margin: 20px;
 		background: rgba(white, 0.4);
 		width: 100%;
 		max-width: 350px;
 		display: inline-block;
+		margin-bottom: 6px;
 
 		.theme-container {
 			text-align: center;
@@ -300,17 +392,11 @@ $hero-break-small: 770px;
 	@extend .slide;
 	background: url('../images/agsquare.png');
 
-	h1 {
-		font-weight: bold;
-		font-size: 40px;
-	}
-
 	.row {
 		margin: 50px 0;
 
 
 		@media (min-width: 769px) {
-
 			// Flex Center
 			display: flex;
 			align-items: center;
@@ -323,13 +409,6 @@ $hero-break-small: 770px;
 
 			@media (max-width: 768px) {
 				margin-top: 40px;
-			}
-
-			h2 {
-				font-family: $raleway-stack;
-				font-weight: 300;
-				border-bottom: 1px solid $divider-color;
-				padding-bottom: 3px;
 			}
 
 			p {
