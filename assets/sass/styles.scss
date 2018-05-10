@@ -1,10 +1,3 @@
-
-
-@import "compass/css3/box-shadow";
-
-
-
-
 /* --- Variables --- */
 
 $helvetica-stack: Helvetica, Arial, Sans-serif;
@@ -19,486 +12,497 @@ $main-red: #7c2626;
 
 /* --- Mixins --- */
 @mixin vertical-align {
-	position: relative;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 @mixin small-caps {
-	font-family: $raleway-stack;
-	text-transform: uppercase;
-	font-weight: 300;
+  font-family: $raleway-stack;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 .flex-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buffer-top {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 
 
 body, html, .container {
-	margin: 0px;
-	height: 100% !important;
-	width: 100% !important;
+  margin: 0px;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 button {
-	@include small-caps;
-	width: 100%;
-	padding: 10px 16px;
-	font-size: 12px;
-	text-align: center;
-	transition: background 0.25s, color 0.15s;
-	max-width: 200px;
-	margin: 15px 5px;
-	border: none;
-	color: #DDD;
-	background-color: transparentize($main-blue, 0.2);
+  @include small-caps;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 12px;
+  text-align: center;
+  transition: background 0.25s, color 0.15s;
+  max-width: 200px;
+  margin: 15px 5px;
+  border: none;
+  color: #DDD;
+  background-color: transparentize($main-blue, 0.2);
 
 
-	&:not(.disabled):hover {
-		color: white;
-		background-color: $main-blue;
-	}
+  &:not(.disabled):hover {
+    color: white;
+    background-color: $main-blue;
+  }
 
-	&.disabled {
-		background-color: transparentize($main-blue, 0.8);
-	}
+  &.disabled {
+    background-color: transparentize($main-blue, 0.8);
+  }
 
-	&.red {
-		background-color: transparentize($main-red, 0.2);
+  &.red {
+    background-color: transparentize($main-red, 0.2);
 
-		&:not(.disabled):hover {
-			background-color: $main-red;
-		}
-		&.disabled {
-			background-color: transparentize($main-red, 0.8);
-		}
-	}
+    &:not(.disabled):hover {
+      background-color: $main-red;
+    }
+    &.disabled {
+      background-color: transparentize($main-red, 0.8);
+    }
+  }
 }
 
 a.button {
-	@extend button;
-	display: block;
-	margin: 6px auto 0;
+  @extend button;
+  display: block;
+  margin: 6px auto 0;
 
-	&:hover {
-		text-decoration: none;
-	}
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .max-width-container {
-	width: 90%;
-	max-width: 950px;
-	display: inline-block;
-	text-align: center;
+  width: 90%;
+  max-width: 950px;
+  display: inline-block;
+  text-align: center;
 }
 .max-width-container-small {
-	max-width: 700px;
-	@extend .max-width-container;
+  max-width: 700px;
+  @extend .max-width-container;
 }
 
 
 .slide {
-	text-align: center;
-	min-height: 400px;
-	padding: 60px 0px;
+  text-align: center;
+  min-height: 400px;
+  padding: 60px 0px;
 
-	// to prevent background from hiding child with negative z-index
-	position: relative;
-	z-index: 0;
+  // to prevent background from hiding child with negative z-index
+  position: relative;
+  z-index: 0;
 
-	.dark-bg {
-		color: #FAFAFA;
-	}
+  .dark-bg {
+    color: #FAFAFA;
+  }
 
-	h1 {
-		@include small-caps;
-		text-align: center;
-		font-size: 34px;
-		padding: 6px;
-		margin: 30px 0;
-		border-bottom: 1px solid $divider-color;
+  h1 {
+    @include small-caps;
+    text-align: center;
+    font-size: 34px;
+    padding: 6px;
+    margin: 30px 0;
+    border-bottom: 1px solid $divider-color;
 
-		&.heavy {
-			font-size: 40px;
-			font-weight: bold;
-		}
-	}
+    &.heavy {
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
 
-	h2 {
-		@include small-caps;
-		font-size: 30px;
-		color: #444;
-		border-bottom: 1px solid $divider-color;
-		padding-bottom: 3px;
+  h2 {
+    @include small-caps;
+    font-size: 30px;
+    color: #444;
+    border-bottom: 1px solid $divider-color;
+    padding-bottom: 3px;
 
-		.info {
-			margin-top: 4px;
-			color: #DDD;
-			font-size: 10px;
-			text-transform: capitalize;
-			text-transform: uppercase;
-			font-family: $helvetica-stack;
+    .info {
+      margin-top: 4px;
+      color: #DDD;
+      font-size: 10px;
+      text-transform: capitalize;
+      text-transform: uppercase;
+      font-family: $helvetica-stack;
 
-			&::before {
-				content: '— ';
-				margin-right: 3px;
-			}
-			&::after {
-				content: ' —';
-				margin-left: 3px;
-			}
-		}
-	}
+      &::before {
+        content: '— ';
+        margin-right: 3px;
+      }
+      &::after {
+        content: ' —';
+        margin-left: 3px;
+      }
+    }
+  }
 
 
 }
 
 
 .image-slide {
-	@extend .slide;
+  @extend .slide;
 
-	.background-filter {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		height: 100%;
-		width: 100%;
-		background: black;
-		opacity: 0.3;
-	}
+  .background-filter {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.3;
+  }
 }
 
 
 
 $hero-break-small: 770px;
 .title-slide {
-	@extend .slide;
+  @extend .slide;
 
-	// flickr: desobte
-	background-size: cover !important;
-	background: url('../images/hero_blur.jpg') no-repeat center center fixed;
-	height: 100%;
-	overflow: hidden;
+  // flickr: desobte
+  background-size: cover !important;
+  background: url('../images/hero_blur.jpg') no-repeat center center fixed;
+  height: 100%;
+  overflow: hidden;
 
-	padding: 0px;
+  padding: 0px;
 
 
-	.slide-content {
-		@include vertical-align;
+  .slide-content {
+    @include vertical-align;
 
-		.slide-header {
-			position: relative;
-			font-size: 90px;
-			color: white;
-			text-shadow: $on-white;
-			text-transform: uppercase;
-			font-family: $montserrat-stack;
+    .slide-header {
+      position: relative;
+      font-size: 90px;
+      color: white;
+      text-shadow: $on-white;
+      text-transform: uppercase;
+      font-family: $montserrat-stack;
 
-			@media (max-width: $hero-break-small) {
-				font-size: 60px;
-			}
-			@media (max-width: 550px) {
-				font-size: 45px;
-			}
-		}
+      @media (max-width: $hero-break-small) {
+        font-size: 60px;
+      }
+      @media (max-width: 550px) {
+        font-size: 45px;
+      }
+    }
 
-		.divider, .subtext {
+    .divider, .subtext {
 
-			// Correct header text being too tall
-			position: relative;
-			top: -25px;
+      // Correct header text being too tall
+      position: relative;
+      top: -25px;
 
-			@media (max-width: $hero-break-small) {
-				top: -15px;
-			}
-			@media (max-width: 550px) {
-				top: -10px;
-			}
-			@media (max-width: 450px) {
-				top: -8px;
-			}
-		}
+      @media (max-width: $hero-break-small) {
+        top: -15px;
+      }
+      @media (max-width: 550px) {
+        top: -10px;
+      }
+      @media (max-width: 450px) {
+        top: -8px;
+      }
+    }
 
-		.divider {
-			hr {
-				margin-top: 8px;
-				margin-bottom: 2px;
+    .divider {
+      hr {
+        margin-top: 8px;
+        margin-bottom: 2px;
 
-				@media (max-width: $hero-break-small) {
-					margin-top: 3px;
-					margin-bottom: 2px;
-				}
-			}
-			.hr-top {
-				width: 750px;
-				max-width: 85%;
-			}
-			.hr-bottom {
-				width: 800px;
-				max-width: 90%;
-			}
-		}
+        @media (max-width: $hero-break-small) {
+          margin-top: 3px;
+          margin-bottom: 2px;
+        }
+      }
+      .hr-top {
+        width: 750px;
+        max-width: 85%;
+      }
+      .hr-bottom {
+        width: 800px;
+        max-width: 90%;
+      }
+    }
 
-		.subtext {
-			color: #EEE;
-			font-family: $opensans-stack;
-			font-size: 30px;
-			font-weight: 100;
+    .subtext {
+      color: #EEE;
+      font-family: $opensans-stack;
+      font-size: 30px;
+      font-weight: 100;
 
-			text-transform: uppercase;
-			text-shadow: $on-white;
+      text-transform: uppercase;
+      text-shadow: $on-white;
 
-			letter-spacing: 2px;
+      letter-spacing: 2px;
 
-			@media (max-width: $hero-break-small) {
-				font-size: 20px;
-			}
-			@media (max-width: 450px) {
-				font-size: 12px;
-			}
-		}
-	}
+      @media (max-width: $hero-break-small) {
+        font-size: 20px;
+      }
+      @media (max-width: 450px) {
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 
 
 
 .about-slide {
-	@extend .slide;
+  @extend .slide;
 
-	// Shadow for the bottom of the title slide
-	@include box-shadow(rgba(black, 0.8) 0px 0px 65px);
-	background: url('../images/agsquare.png');
+  // Shadow for the bottom of the title slide
+  box-shadow: rgba(black, 0.8) 0 0 65px;
+  background: url('../images/agsquare.png');
 
-	.skills {
+  .skills {
 
-		.skills-col {
-			padding: 0px 35px;
-		}
+    .skills-col {
+      padding: 0 35px;
+    }
 
-		.icon-description {
-			height: 40px;
-			line-height: 40px;
-			font-family: $raleway-stack;
-			font-size: 16px;
-			font-weight: 300;
-			color: black;
-		}
+    .icon-description {
+      height: 40px;
+      line-height: 40px;
+      font-family: $raleway-stack;
+      font-size: 16px;
+      font-weight: 300;
+      color: black;
+    }
 
-		img {
-			padding-bottom: 26px;
+    img {
+      padding-bottom: 26px;
 
-			opacity: 0.8;
-			height: 120px;
-			width: auto;
-		}
-		img:hover {
-			opacity: 1;
-		}
-	}
+      opacity: 0.8;
+      height: 120px;
+      width: auto;
+    }
+    img:hover {
+      opacity: 1;
+    }
+  }
 
-	.divider-row {
+  .divider-row {
 
-		.divider {
-			margin: 50px auto 70px;
+    .divider {
+      margin: 50px auto 70px;
 
-			width: 100%;
-			background: $divider-color;
-			height: 1px;
-		}
-	}
+      width: 100%;
+      background: $divider-color;
+      height: 1px;
+    }
+  }
 
-	.testimonials {
+  .testimonials {
 
-		blockquote {
-			text-align: left;
-			border-color: #CCC;
-			border-width: 3px;
-			font-family: $opensans-stack;
-			font-weight: 100;
-			margin: 14px;
-			padding-right: 30px;
+    blockquote {
+      text-align: left;
+      border-color: #CCC;
+      border-width: 3px;
+      font-family: $opensans-stack;
+      font-weight: 100;
+      margin: 14px;
+      padding-right: 30px;
 
-			footer {
-				margin-top: 8px;
-			}
-		}
-	}
+      footer {
+        margin-top: 8px;
+      }
+    }
+  }
 }
 
 
 .themes-slide {
-	@extend .slide;
-	@extend .image-slide;
+  @extend .slide;
+  @extend .image-slide;
 
-	background-size: cover !important;
-	background: url('../images/blueGradient.jpg') no-repeat center center fixed;
+  background-size: cover !important;
+  background: url('../images/blueGradient.jpg') no-repeat center center fixed;
 
-	h1 {
-		// To put on top of filter layer
-		position: relative;
-	}
+  h1 {
+    // To put on top of filter layer
+    position: relative;
+  }
 
-	h2 {
-		letter-spacing: 2px;
-		margin-top: 20px;
-		margin-bottom: 5px;
-		border: none;
+  h2 {
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border: none;
 
-		.info {
-			letter-spacing: 1px;
-		}
-	}
+    .info {
+      letter-spacing: 1px;
+    }
+  }
 
 
-	.theme-frame {
-		// padding: 15px;
-		// margin: 20px;
-		background: rgba(white, 0.4);
-		width: 100%;
-		max-width: 350px;
-		display: inline-block;
-		margin-bottom: 6px;
+  .theme-frame {
+    // padding: 15px;
+    // margin: 20px;
+    background: rgba(white, 0.4);
+    width: 100%;
+    max-width: 350px;
+    display: inline-block;
+    margin-bottom: 6px;
 
-		.theme-container {
-			text-align: center;
-			overflow: hidden;
+    .theme-container {
+      text-align: center;
+      overflow: hidden;
 
-			img {
-				margin: 0 -50%;
-				display: inline-block;
-				height: 400px;
-				opacity: 0.7;
-				width: auto;
-				transition: opacity 0.5s;
-			}
+      img {
+        margin: 0 -50%;
+        display: inline-block;
+        height: 400px;
+        opacity: 0.7;
+        width: auto;
+        transition: opacity 0.5s;
+      }
 
-			img:hover {
-				opacity: 0.9;
-			}
-		}
-	}
+      img:hover {
+        opacity: 0.9;
+      }
+    }
+  }
 }
 
 .projects-slide {
-	@extend .slide;
-	background: url('../images/agsquare.png');
+  @extend .slide;
+  background: url('../images/agsquare.png');
 
-	.row {
-		margin: 50px 0;
-
-
-		@media (min-width: 769px) {
-			// Flex Center
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.project-desc {
-			position: relative;
-			top: -15px;
-
-			@media (max-width: 768px) {
-				margin-top: 40px;
-			}
-
-			p {
-				font-weight: 300;
-				font-size: 1.1em;
-				font-family: $raleway-stack;
-			}
-		}
+  .row {
+    margin: 50px 0;
 
 
-		.fade-in-borders {
-			display: inline-block;
-			width: 100%;
-			max-width: 300px;
-			background: rgba(white, 0.2);
-			transition: background 0.4s;
+    @media (min-width: 769px) {
+      // Flex Center
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-			z-index: 0;
-			position: relative;
+    .project-desc {
+      position: relative;
+      top: -15px;
 
-			img.preview {
-				width: 100%;
-				height: auto;
-				opacity: 0.8;
-				transition: opacity 0.4s;
-			}
-			img.preview:hover {
-				opacity: 1;
-			}
-		}
-		.fade-in-borders:hover {
-			background: rgba(white, 0.6);
-		}
+      @media (max-width: 768px) {
+        margin-top: 40px;
+      }
 
-	}
+      p {
+        font-weight: 300;
+        font-size: 1.1em;
+        font-family: $raleway-stack;
+      }
+    }
+
+
+    .fade-in-borders {
+      display: inline-block;
+      width: 100%;
+      max-width: 300px;
+      background: rgba(white, 0.2);
+      transition: background 0.4s;
+
+      z-index: 0;
+      position: relative;
+
+      img.preview {
+        width: 100%;
+        height: auto;
+        opacity: 0.8;
+        transition: opacity 0.4s;
+      }
+      img.preview:hover {
+        opacity: 1;
+      }
+    }
+    .fade-in-borders:hover {
+      background: rgba(white, 0.6);
+    }
+
+  }
 
 
 }
 
 .footer-slide {
-	@extend .slide;
-	background: #333;
-	color: #888;
-	font-weight: 100;
-	font-family: $helvetica-stack;
+  @extend .slide;
+  background: #333;
+  color: #888;
+  color: #CCC;
+  font-weight: 100;
+  font-family: $helvetica-stack;
 
-	.max-width-container {
-		text-align: left;
-	}
+  a {
+    color: #2f649b;
+    color: #999;
+    text-decoration: underline;
+
+    &:hover {
+      color: #AAA;
+    }
+  }
+
+  .max-width-container {
+    text-align: left;
+  }
 }
 
 
 
 
 .fade-in-borders {
-	padding: 18px;
-	position: relative;
-	height: 100%;
+  padding: 18px;
+  position: relative;
+  height: 100%;
 
-	.fadeInRight, .fadeInLeft, .fadeInUp, .fadeInDown {
-		background: #AAA;
-		position: absolute;
-	}
+  .fadeInRight, .fadeInLeft, .fadeInUp, .fadeInDown {
+    background: #AAA;
+    position: absolute;
+  }
 
-	// Top Border, Bottom Border
-	.fadeInRight, .fadeInLeft {
-		height: 1px;
-		width: 100%;
-		left: 0px;
-		bottom: 0px;
-		z-index: -1;
-	}
-	.fadeInRight { top: 0px; }
+  // Top Border, Bottom Border
+  .fadeInRight, .fadeInLeft {
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    z-index: -1;
+  }
+  .fadeInRight { top: 0px; }
 
-	// So the bottom animates at the same time as the rest
-	.fadeInLeft {
-		height: 100%;
-		background: none;
-		border-bottom: 1px solid #AAA;
-		bottom: 0px;
-	}
+  // So the bottom animates at the same time as the rest
+  .fadeInLeft {
+    height: 100%;
+    background: none;
+    border-bottom: 1px solid #AAA;
+    bottom: 0px;
+  }
 
-	// Right Border, Left Border
-	.fadeInUp, .fadeInDown {
-		width: 1px;
-		height: 100%;
-		top: 0px;
-		bottom: 0px;
-	}
-	.fadeInUp { right: 0px; }
-	.fadeInDown { left: 0px; }
+  // Right Border, Left Border
+  .fadeInUp, .fadeInDown {
+    width: 1px;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+  }
+  .fadeInUp { right: 0px; }
+  .fadeInDown { left: 0px; }
 
 }
